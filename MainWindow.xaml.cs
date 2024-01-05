@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CookieClicker
 {
@@ -26,9 +27,25 @@ namespace CookieClicker
         public MainWindow()
         {
             InitializeComponent();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(10);
+            timer.Tick += timer_Tick;
+            timer.Start();
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            LblCookies.Content = returnAantalCookies();
+            this.Title = returnAantalCookies();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            imgwidth = ImgCookie.ActualWidth;
         }
         private void ImgCookie_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
             ImgCookie.Width = imgwidth - 50;
             totaal_score += som_optellen;
         }
@@ -37,6 +54,21 @@ namespace CookieClicker
         {
             ImgCookie.Width = imgwidth;
 
+        }
+
+        private void ImgCookie_MouseEnter(object sender, MouseEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void ImgCookie_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ImgCookie.Width = imgwidth;
+        }
+
+        private string returnAantalCookies()
+        {
+            return $"{Math.Round(totaal_score)} cookies";
         }
 
     }

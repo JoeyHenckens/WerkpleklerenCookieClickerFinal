@@ -3,3 +3,13 @@ C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\MainWindow.g.c
 C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\App.g.cs
 C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker_MarkupCompile.cache
 C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker_MarkupCompile.lref
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe.config
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.pdb
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\MainWindow.baml
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.g.resources
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Properties.Resources.resources
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.GenerateResource.cache
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.CoreCompileInputs.cache
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.exe
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.pdb
