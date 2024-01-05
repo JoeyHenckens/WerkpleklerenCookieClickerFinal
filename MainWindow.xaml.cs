@@ -20,9 +20,24 @@ namespace CookieClicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        private double totaal_score = 0;
+        private double som_optellen = 1;
+        private double imgwidth;
         public MainWindow()
         {
             InitializeComponent();
         }
+        private void ImgCookie_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ImgCookie.Width = imgwidth - 50;
+            totaal_score += som_optellen;
+        }
+
+        private void ImgCookie_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            ImgCookie.Width = imgwidth;
+
+        }
+
     }
 }
