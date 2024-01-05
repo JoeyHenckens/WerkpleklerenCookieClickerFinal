@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Cookie Clicker" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" FontSize="24px"/>
+        <Label Content="Store" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24px"/>
+        <Label x:Name="LblCookies" Content="0 cookies" FontSize="36px" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
+        <Image x:Name="ImgCookie" Source="/Cookie.png" Grid.Row="1" Grid.RowSpan="2" MouseDown="ImgCookie_MouseDown" MouseUp="ImgCookie_MouseUp" MouseEnter="ImgCookie_MouseEnter" MouseLeave="ImgCookie_MouseLeave"/>
         
+
     </Grid>
 </Window>

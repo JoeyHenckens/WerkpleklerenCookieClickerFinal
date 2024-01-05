@@ -1,0 +1,5 @@
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.AssemblyReference.cache
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\MainWindow.g.cs
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\App.g.cs
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker_MarkupCompile.cache
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker_MarkupCompile.lref
