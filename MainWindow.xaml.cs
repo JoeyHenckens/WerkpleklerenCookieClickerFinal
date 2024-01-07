@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.VisualBasic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,13 +22,13 @@ namespace CookieClicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        private double totaal_score = 5000000;
+        private double totaal_score = 500000000;
         private double som_optellen = 1;
         private double imgwidth;
         private double passiefInkomen = 0;
-        private int[] shop = new int[5] { 0, 0, 0, 0, 0,};
-        private double[] prijs = new double[5] { 15, 100, 1100, 12000, 130000 };
-        private double[] passiefinkomen = new double[5] { 0.001, 0.01, 0.08, .47, 2.60};
+        private int[] shop = new int[7] { 0, 0, 0, 0, 0,0,0};
+        private double[] prijs = new double[7] { 15, 100, 1100, 12000, 130000,1400000,20000000 };
+        private double[] passiefinkomen = new double[7] { 0.001, 0.01, 0.08, .47, 2.60,1.4,7.8};
         public MainWindow()
         {
             InitializeComponent();
@@ -108,6 +109,16 @@ namespace CookieClicker
                     totaal_score -= prijs[4];
                     shop[4]++;
                     break;
+                case ("Btnshop6"):
+                    prijs[5] = investeringPrijs(prijs[5], shop[5]);
+                    totaal_score -= prijs[5];
+                    shop[5]++;
+                    break;
+                case ("Btnshop7"):
+                    prijs[6] = investeringPrijs(prijs[6], shop[6]);
+                    totaal_score -= prijs[6];
+                    shop[6]++;
+                    break;
             }
           }
 
@@ -122,6 +133,8 @@ namespace CookieClicker
             Btnshop3.IsEnabled = false;
             Btnshop4.IsEnabled = false;
             Btnshop5.IsEnabled = false;
+            Btnshop6.IsEnabled = false;
+            Btnshop7.IsEnabled = false;
             if (totaal_score > prijs[0])
             {
                 Btnshop1.Visibility = Visibility.Visible;
@@ -147,7 +160,16 @@ namespace CookieClicker
                 Btnshop5.Visibility = Visibility.Visible;
                 Btnshop5.IsEnabled = true;
             }
-            else { return; }
+            if (totaal_score > prijs[5])
+            {
+                Btnshop6.Visibility = Visibility.Visible;
+                Btnshop6.IsEnabled = true;
+            }
+            if (totaal_score > prijs[6])
+            {
+                Btnshop7.Visibility = Visibility.Visible;
+                Btnshop7.IsEnabled = true;
+            }
 
         }
 
@@ -177,7 +199,7 @@ namespace CookieClicker
 
         private void opbrengstPassief() {
             passiefInkomen = 0;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 7; i++)
             {
                 if (totaal_score >= prijs[i])
                 {
@@ -215,5 +237,18 @@ namespace CookieClicker
             return tekstGetal;
         }
 
+        private void LblBakery_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string bakery = Interaction.InputBox("geef een geldige naam in", "toevoegen");
+
+            if (bakery.Contains(" ") || bakery.Length == 0)
+            {
+                MessageBox.Show("Geef een naam in zonder witruimte er in", "Error",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+            else
+            {
+                LblBakery.Content = bakery;
+            }
+        }
     }
 }

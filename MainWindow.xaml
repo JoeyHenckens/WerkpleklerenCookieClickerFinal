@@ -22,6 +22,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <Label x:Name="LblBakery" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Content="PXL-Bakery" MouseDown="LblBakery_MouseDown"/>
         <Label Content="Cookie Clicker" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" FontSize="24px"/>
         <Label x:Name="lblInkomen" Content="Passief Inkomen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="24px" Foreground="White">
             <Label.Background>
@@ -96,6 +97,29 @@
                     </DockPanel>
                 </Button>
             </DockPanel>
+            <DockPanel  x:Name="Shop6" TouchDown="Btnshop_Click">
+                <Button x:Name="Btnshop6" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" Visibility="Hidden" TouchEnter="Btnshop_TouchEnter">
+                    <DockPanel>
+                        <Image Source="/bank.jpg" Width="15" Height="15" Stretch="Fill" Margin="5,0"/>
+                        <TextBlock Text="bank" Margin="5,0"/>
+                        <TextBlock Text="prijs:"/>
+                        <TextBlock x:Name="Txtklik6" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
+                        <TextBlock x:Name="TxtAankoop6" Margin="35,0"></TextBlock>
+                    </DockPanel>
+                </Button>
+            </DockPanel>
+                        <DockPanel  x:Name="Shop7" TouchDown="Btnshop_Click">
+                <Button x:Name="Btnshop7" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" Visibility="Hidden" TouchEnter="Btnshop_TouchEnter">
+                    <DockPanel>
+                        <Image Source="/temple.jpg" Width="15" Height="15" Stretch="Fill" Margin="5,0"/>
+                        <TextBlock Text="temple" Margin="5,0"/>
+                        <TextBlock Text="prijs:"/>
+                        <TextBlock x:Name="Txtklik7" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
+                        <TextBlock x:Name="TxtAankoop7" Margin="35,0"></TextBlock>
+                    </DockPanel>
+                </Button>
+            </DockPanel>
+            
         </StackPanel>
 
 
