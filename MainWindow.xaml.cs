@@ -24,6 +24,8 @@ namespace CookieClicker
         private double totaal_score = 0;
         private double som_optellen = 1;
         private double imgwidth;
+        private double[] shop = new double[5] { 0, 0, 0, 0, 0,};
+        private double[] prijs = new double[5] { 15, 100, 1100, 12000, 130000 };
         public MainWindow()
         {
             InitializeComponent();
@@ -79,6 +81,30 @@ namespace CookieClicker
         private void Btnshop_TouchEnter(object sender, TouchEventArgs e)
         {
             ((Button)sender).ToolTip = returnAantalCookies();
+        }
+
+        private void checkIfBuyable() {
+            if (totaal_score >= prijs[0])
+            {
+                Btnshop1.Visibility = Visibility.Visible;
+            }
+            if (totaal_score >= prijs[1])
+            {
+                Btnshop1.Visibility = Visibility.Visible;
+            }
+            if (totaal_score >= prijs[2])
+            {
+                Btnshop1.Visibility = Visibility.Visible;
+            }
+            if (totaal_score >= prijs[3])
+            {
+                Btnshop1.Visibility = Visibility.Visible;
+            }
+            if (totaal_score >= prijs[4])
+            {
+                Btnshop1.Visibility = Visibility.Visible;
+            }
+
         }
 
     }
