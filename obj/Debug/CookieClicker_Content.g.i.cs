@@ -8,11 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bankbg.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("factorybg.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("farmbg.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("grandmabg.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("minebg.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("templebg.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("goldencookie.png")]
 
 

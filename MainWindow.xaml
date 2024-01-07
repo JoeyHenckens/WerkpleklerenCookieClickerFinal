@@ -40,7 +40,8 @@
         </Label>
         <Label x:Name="LblCookies" Content="0 cookies" FontSize="36px" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
         <Image x:Name="ImgCookie" Source="/Cookie.png" Grid.Row="1" Grid.RowSpan="2" MouseDown="ImgCookie_MouseDown" MouseUp="ImgCookie_MouseUp" MouseEnter="ImgCookie_MouseEnter" MouseLeave="ImgCookie_MouseLeave"/>
-
+        <Canvas x:Name="CanvasGoldencookie" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" />
+        
         <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="3">
             <DockPanel  x:Name="Shop1" TouchDown="Btnshop_Click">
                 <Button x:Name="Btnshop1" Click="Btnshop_Click" Visibility="Hidden" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" TouchEnter="Btnshop_TouchEnter">
@@ -130,17 +131,6 @@
 
         </StackPanel>
 
-        <ScrollViewer Grid.Row="4" Grid.Column="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-            <StackPanel>
-                <Button x:Name="BtnBonusCursor" Tag="0"  Click="BtnBonus_Click" Visibility="Hidden"></Button>
-                <Button x:Name="BtnBonusGrandma" Tag="1"  Click="BtnBonus_Click" Visibility="Hidden"></Button>
-                <Button x:Name="BtnBonusFarm" Tag="2"   Click="BtnBonus_Click" Visibility="Hidden"></Button>
-                <Button x:Name="BtnBonusMine" Tag="3" Click="BtnBonus_Click" Visibility="Hidden"></Button>
-                <Button x:Name="BtnBonusFactory" Tag="4"  Click="BtnBonus_Click" Visibility="Hidden"></Button>
-                <Button x:Name="BtnBonusBank" Tag="5"  Click="BtnBonus_Click" Visibility="Hidden"></Button>
-                <Button x:Name="BtnBonusTemple" Tag="6" Click="BtnBonus_Click" Visibility="Hidden"></Button>
-            </StackPanel>
-        </ScrollViewer>
         <ScrollViewer Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <StackPanel x:Name="ImgIvesteging">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="auto">
@@ -168,6 +158,7 @@
                 <Label x:Name="Lblkop"></Label>
             </StackPanel>
         </ScrollViewer>
+        <Button x:Name="BtnAchievements" Content="Achievements" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Click="BtnAchievements_Click"/>
 
 
     </Grid>

@@ -29,6 +29,8 @@ namespace CookieClicker
         private int[] shop = new int[7] { 0, 0, 0, 0, 0,0,0};
         private double[] prijs = new double[7] { 15, 100, 1100, 12000, 130000,1400000,20000000 };
         private double[] passiefinkomen = new double[7] { 0.001, 0.01, 0.08, .47, 2.60,1.4,7.8};
+        private bool iscookievisible = false;
+        public static List<string> achievements = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +38,46 @@ namespace CookieClicker
             timer.Interval = TimeSpan.FromMilliseconds(10);
             timer.Tick += timer_Tick;
             timer.Start();
+            DispatcherTimer goldencookie = new DispatcherTimer();
+            goldencookie.Interval = TimeSpan.FromMinutes(1);
+            goldencookie.Tick += goldencookie_tick;
+            goldencookie.Start();
+        }
+
+        private void goldencookie_tick(object sender, EventArgs e)
+        {
+            Random cookieRandom = new Random();
+            if (cookieRandom.Next(1, 101) <= 30)
+            {
+                if (!iscookievisible)
+                {
+
+                    Image goldencookie = new Image
+                    {
+                        Source = new BitmapImage(new Uri("pack://application:,,,/goldencookie.png")),
+                        Width = 35,
+                        Height = 35,
+                        Cursor = Cursors.Hand
+                    };
+                    Canvas.SetLeft(goldencookie, cookieRandom.Next((int)ActualWidth - 40));
+                    Canvas.SetTop(goldencookie, cookieRandom.Next((int)ActualHeight - 40));
+
+
+                    goldencookie.MouseLeftButtonDown += GoldenCookie_MouseLeftButtonDown;
+
+
+                    CanvasGoldencookie.Children.Add(goldencookie);
+
+
+                    iscookievisible = true;
+                }
+            }
+        }
+
+        private void GoldenCookie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            totaal_score += (passiefInkomen * 900);
+            iscookievisible = false;
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -46,6 +88,7 @@ namespace CookieClicker
             updatePrijs();
             opbrengstPassief();
             totaal_score += passiefInkomen;
+            checkAchievements();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -261,6 +304,8 @@ namespace CookieClicker
                 LblBakery.Content = bakery;
             }
         }
+
+
         private void ImgAddChilds(string backgroundname, string imagename,StackPanel panel)
         {
             ImageBrush imgBackground = new ImageBrush();
@@ -273,6 +318,112 @@ namespace CookieClicker
             imagechild.Height = 100;
             imagechild.Width = 100;
             panel.Children.Add(imagechild);
+        }
+
+        private void checkAchievements() { 
+            if(totaal_score > 10 && (achievements.Contains("10 score gehaald!") == false))
+            {
+                achievements.Add("10 score gehaald!");
+                MessageBox.Show("10 score gehaald!");
+            }
+            else if (totaal_score > 100 && (achievements.Contains("100 score gehaald!") == false))
+            {
+                achievements.Add("100 score gehaald!");
+                MessageBox.Show("100 score gehaald!");
+            }
+            else if (totaal_score > 1000 && (achievements.Contains("1000 score gehaald!") == false))
+            {
+                achievements.Add("1000 score gehaald!");
+                MessageBox.Show("1000 score gehaald!");
+            }
+            else if (totaal_score > 10000 && (achievements.Contains("10000 score gehaald!") == false))
+            {
+                achievements.Add("10000 score gehaald!");
+                MessageBox.Show("10000 score gehaald!");
+            }
+            else if (totaal_score > 10000 && (achievements.Contains("10000 score gehaald!") == false))
+            {
+                achievements.Add("10000 score gehaald!");
+                MessageBox.Show("10000 score gehaald!");
+            }
+            else if (totaal_score > 100000 && (achievements.Contains("100000 score gehaald!") == false))
+            {
+                achievements.Add("100000 score gehaald!");
+                MessageBox.Show("100000 score gehaald!");
+            }
+            else if (shop[0] == 10 && (achievements.Contains("10 cursors gekocht!") == false))
+            {
+                achievements.Add("10 cursors gekocht!");
+                MessageBox.Show("10 cursors gekocht!");
+            }
+            else if (shop[1] == 10 && (achievements.Contains("10 grandmas gekocht!") == false))
+            {
+                achievements.Add("10 grandmas gekocht!");
+                MessageBox.Show("10 grandmas gekocht!");
+            }
+            else if (shop[2] == 10 && (achievements.Contains("10 farms gekocht!") == false))
+            {
+                achievements.Add("10 farms gekocht!");
+                MessageBox.Show("10 farms gekocht!");
+            }
+            else if (shop[3] == 10 && (achievements.Contains("10 factories gekocht!") == false))
+            {
+                achievements.Add("10 factories gekocht!");
+                MessageBox.Show("10 factories gekocht!");
+            }
+            else if (shop[4] == 10 && (achievements.Contains("10 banks gekocht!") == false))
+            {
+                achievements.Add("10 banks gekocht!");
+                MessageBox.Show("10 banks gekocht!");
+            }
+            else if (shop[5] == 10 && (achievements.Contains("10 temples gekocht!") == false))
+            {
+                achievements.Add("10 temples gekocht!");
+                MessageBox.Show("10 temples gekocht!");
+            }
+            else if (shop[0] == 1 && shop[1] == 1 && shop[2] == 1 && shop[3] == 1 && shop[4] == 1 && shop[5] == 1 && shop[6] == 1 && (achievements.Contains("Van alles wat gekocht!") == false))
+            {
+                achievements.Add("Van alles wat gekocht!");
+                MessageBox.Show("Van alles wat gekocht!");
+            }
+            else if (shop[0] == 1 && (achievements.Contains("begin met de upgrades!") == false))
+            {
+                achievements.Add("begin met de upgrades!");
+                MessageBox.Show("begin met de upgrades!");
+            }
+            else if (shop[1] == 20 && (achievements.Contains("je kan je eigen rusthuis beginnen!") == false))
+            {
+                achievements.Add("je kan je eigen rusthuis beginnen!");
+                MessageBox.Show("je kan je eigen rusthuis beginnen!");
+            }
+            else if (shop[2] == 50 && (achievements.Contains("een rijke boer!") == false))
+            {
+                achievements.Add("een rijke boer!");
+                MessageBox.Show("een rijke boer!");
+            }
+            else if (shop[5] == 5 && (achievements.Contains("je eigen geloof starten!") == false))
+            {
+                achievements.Add("je eigen geloof starten!");
+                MessageBox.Show("je eigen geloof starten!");
+            }
+            else if (totaal_score > 314314 && (achievements.Contains("de meester van pi!") == false))
+            {
+                achievements.Add("de meester van pi!");
+                MessageBox.Show("de meester van pi!");
+            }
+            else if (totaal_score > 100000000 && (achievements.Contains("de beste speler!") == false))
+            {
+                achievements.Add("de beste speler!");
+                MessageBox.Show("de beste speler!");
+            }
+
+
+        }
+
+        private void BtnAchievements_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 f = new Window1();
+            f.ShowDialog();
         }
     }
 }

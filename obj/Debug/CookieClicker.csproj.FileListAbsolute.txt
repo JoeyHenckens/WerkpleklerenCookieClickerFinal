@@ -13,3 +13,5 @@ C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.
 C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.CoreCompileInputs.cache
 C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.exe
 C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.pdb
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\Window1.g.cs
+C:\Users\joeyh\source\repos\CookieClicker\CookieClicker\obj\Debug\Window1.baml
