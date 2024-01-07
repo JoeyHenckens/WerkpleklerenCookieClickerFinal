@@ -88,35 +88,42 @@ namespace CookieClicker
                     prijs[0] = investeringPrijs(prijs[0], shop[0]);
                     totaal_score -= prijs[0];
                     shop[0]++;
+                    ImgAddChilds("cursorbg.jpg","cursor.png",StackCursor);
                     break;
                 case ("Btnshop2"):
                     prijs[1] = investeringPrijs(prijs[1], shop[1]);
                     totaal_score -= prijs[1];
+                    ImgAddChilds("grandmabg.jpg", "grandma.png", StackGrandma);
                     shop[1]++;
                     break;
                 case ("Btnshop3"):
                     prijs[2] = investeringPrijs(prijs[2], shop[2]);
                     totaal_score -= prijs[2];
+                    ImgAddChilds("farmbg.jpg", "farm.jpg", StackFarm);
                     shop[2]++;
                     break;
                 case ("Btnshop4"):
                     prijs[3] = investeringPrijs(prijs[3], shop[3]);
                     totaal_score -= prijs[3];
+                    ImgAddChilds("minebg.jpg", "mine.png", StackMine);
                     shop[3]++;
                     break;
                 case ("Btnshop5"):
                     prijs[4] = investeringPrijs(prijs[4], shop[4]);
                     totaal_score -= prijs[4];
+                    ImgAddChilds("factorybg.jpg", "factory.jpg", StackFactory);
                     shop[4]++;
                     break;
                 case ("Btnshop6"):
                     prijs[5] = investeringPrijs(prijs[5], shop[5]);
                     totaal_score -= prijs[5];
+                    ImgAddChilds("bankbg.jpg", "bank.jpg", StackBank);
                     shop[5]++;
                     break;
                 case ("Btnshop7"):
                     prijs[6] = investeringPrijs(prijs[6], shop[6]);
                     totaal_score -= prijs[6];
+                    ImgAddChilds("templebg.jpg", "temple.jpg", StackMine);
                     shop[6]++;
                     break;
             }
@@ -185,16 +192,20 @@ namespace CookieClicker
 
         private void updatePrijs()
         {
-            TxtAankoop1.Text = prijs[0].ToString();
-            TxtAankoop2.Text = prijs[1].ToString();
-            TxtAankoop3.Text = prijs[2].ToString();
-            TxtAankoop4.Text = prijs[3].ToString();
-            TxtAankoop5.Text = prijs[4].ToString();
-            Txtklik1.Text = shop[0].ToString();
-            Txtklik2.Text = shop[1].ToString();
-            Txtklik3.Text = shop[2].ToString();
-            Txtklik4.Text = shop[3].ToString();
-            Txtklik5.Text = shop[4].ToString();
+            TxtAankoop1.Text = afkortingenGetallen(prijs[0]).ToString();
+            TxtAankoop2.Text = afkortingenGetallen(prijs[1]).ToString();
+            TxtAankoop3.Text = afkortingenGetallen(prijs[2]).ToString();
+            TxtAankoop4.Text = afkortingenGetallen(prijs[3]).ToString();
+            TxtAankoop5.Text = afkortingenGetallen(prijs[4]).ToString();
+            TxtAankoop6.Text = afkortingenGetallen(prijs[5]).ToString();
+            TxtAankoop7.Text = afkortingenGetallen(prijs[6]).ToString();
+            Txtklik1.Text = afkortingenGetallen(shop[0]).ToString();
+            Txtklik2.Text = afkortingenGetallen(shop[1]).ToString();
+            Txtklik3.Text = afkortingenGetallen(shop[2]).ToString();
+            Txtklik4.Text = afkortingenGetallen(shop[3]).ToString();
+            Txtklik5.Text = afkortingenGetallen(shop[4]).ToString();
+            Txtklik6.Text = afkortingenGetallen(shop[5]).ToString();
+            Txtklik7.Text = afkortingenGetallen(shop[6]).ToString();
         }
 
         private void opbrengstPassief() {
@@ -239,7 +250,7 @@ namespace CookieClicker
 
         private void LblBakery_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            string bakery = Interaction.InputBox("geef een geldige naam in", "toevoegen");
+            string bakery = Interaction.InputBox("Geef een naam in: ", "Change name");
 
             if (bakery.Contains(" ") || bakery.Length == 0)
             {
@@ -249,6 +260,19 @@ namespace CookieClicker
             {
                 LblBakery.Content = bakery;
             }
+        }
+        private void ImgAddChilds(string backgroundname, string imagename,StackPanel panel)
+        {
+            ImageBrush imgBackground = new ImageBrush();
+            imgBackground.ImageSource = new BitmapImage(new Uri($"pack://application:,,,/{backgroundname}"));
+            imgBackground.Stretch = Stretch.Fill;
+            imgBackground.TileMode = TileMode.Tile;
+            panel.Background = imgBackground;
+            Image imagechild = new Image();
+            imagechild.Source = new BitmapImage(new Uri($"pack://application:,,,/{imagename}"));
+            imagechild.Height = 100;
+            imagechild.Width = 100;
+            panel.Children.Add(imagechild);
         }
     }
 }
