@@ -23,52 +23,63 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Cookie Clicker" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" FontSize="24px"/>
-        <Label Content="Store" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24px"/>
+        <Label x:Name="lblInkomen" Content="Passief Inkomen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="24px"/>
         <Label x:Name="LblCookies" Content="0 cookies" FontSize="36px" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
         <Image x:Name="ImgCookie" Source="/Cookie.png" Grid.Row="1" Grid.RowSpan="2" MouseDown="ImgCookie_MouseDown" MouseUp="ImgCookie_MouseUp" MouseEnter="ImgCookie_MouseEnter" MouseLeave="ImgCookie_MouseLeave"/>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <DockPanel  x:Name="Shop1" TouchDown="Btnshop_Click">
-                <Button x:Name="Btnshop1" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" TouchEnter="Btnshop_TouchEnter">
+                <Button x:Name="Btnshop1" Click="Btnshop_Click" Visibility="Hidden" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" TouchEnter="Btnshop_TouchEnter">
                     <DockPanel>
                         <Image Source="/cursor.png" Width="15" Height="15" Stretch="Fill" Margin="5,0" IsEnabled="False"/>
                         <TextBlock Text="cursor" Margin="5,0" IsEnabled="False"/>
                         <TextBlock Text="prijs:" IsEnabled="False"/>
-                        <TextBlock x:Name="TxtPrijs1" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
-                        <TextBlock Margin="60,0"></TextBlock>
+                        <TextBlock x:Name="Txtklik1" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
+                        <TextBlock x:Name="TxtAankoop1" Margin="35,0"></TextBlock>
                     </DockPanel>
                 </Button>
             </DockPanel>
             <DockPanel  x:Name="Shop2" TouchDown="Btnshop_Click">
-                <Button x:Name="Btnshop2" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" TouchEnter="Btnshop_TouchEnter">
+                <Button x:Name="Btnshop2" Click="Btnshop_Click" Margin="5" Visibility="Hidden" Height="25" HorizontalAlignment="Left" Background="White" TouchEnter="Btnshop_TouchEnter">
                     <DockPanel>
-                        <Image Source="/grandma.png" Width="15" Height="15" Stretch="Fill" Margin="5,0" IsEnabled="False"/>
-                        <TextBlock Text="grandma" Margin="5,0" IsEnabled="False"/>
-                        <TextBlock Text="prijs:" IsEnabled="False"/>
-                        <TextBlock x:Name="TxtPrijs2" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
-                        <TextBlock Margin="60,0"></TextBlock>
+                        <Image Source="/grandma.png" Width="15" Height="15" Stretch="Fill" Margin="5,0"/>
+                        <TextBlock Text="grandma" Margin="5,0"/>
+                        <TextBlock Text="prijs:"/>
+                        <TextBlock x:Name="Txtklik2" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
+                        <TextBlock x:Name="TxtAankoop2" Margin="35,0"></TextBlock>
                     </DockPanel>
                 </Button>
             </DockPanel>
             <DockPanel  x:Name="Shop3" TouchDown="Btnshop_Click">
-                <Button x:Name="Btnshop3" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" TouchEnter="Btnshop_TouchEnter">
+                <Button x:Name="Btnshop3" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Visibility="Hidden" Background="White" TouchEnter="Btnshop_TouchEnter">
                     <DockPanel>
-                        <Image Source="/farm.jpg" Width="15" Height="15" Stretch="Fill" Margin="5,0" IsEnabled="False"/>
-                        <TextBlock Text="farm" Margin="5,0" IsEnabled="False"/>
-                        <TextBlock Text="prijs:" IsEnabled="False"/>
-                        <TextBlock x:Name="TxtPrijs3" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
-                        <TextBlock Margin="60,0"></TextBlock>
+                        <Image Source="/farm.jpg" Width="15" Height="15" Stretch="Fill" Margin="5,0"/>
+                        <TextBlock Text="farm" Margin="5,0"/>
+                        <TextBlock Text="prijs:"/>
+                        <TextBlock x:Name="Txtklik3" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
+                        <TextBlock x:Name="TxtAankoop3" Margin="35,0"></TextBlock>
                     </DockPanel>
                 </Button>
             </DockPanel>
             <DockPanel  x:Name="Shop4" TouchDown="Btnshop_Click">
-                <Button x:Name="Btnshop4" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" TouchEnter="Btnshop_TouchEnter">
+                <Button x:Name="Btnshop4" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" Visibility="Hidden" TouchEnter="Btnshop_TouchEnter">
                     <DockPanel>
-                        <Image Source="/mine.png" Width="15" Height="15" Stretch="Fill" Margin="5,0" IsEnabled="False"/>
-                        <TextBlock Text="mine" Margin="5,0" IsEnabled="False"/>
-                        <TextBlock Text="prijs:" IsEnabled="False"/>
-                        <TextBlock x:Name="TxtPrijs4" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
-                        <TextBlock Margin="60,0"></TextBlock>
+                        <Image Source="/mine.png" Width="15" Height="15" Stretch="Fill" Margin="5,0"/>
+                        <TextBlock Text="mine" Margin="5,0"/>
+                        <TextBlock Text="prijs:"/>
+                        <TextBlock x:Name="Txtklik4" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
+                        <TextBlock x:Name="TxtAankoop4" Margin="35,0"></TextBlock>
+                    </DockPanel>
+                </Button>
+            </DockPanel>
+            <DockPanel  x:Name="Shop5" TouchDown="Btnshop_Click">
+                <Button x:Name="Btnshop5" Click="Btnshop_Click" Margin="5" Height="25" HorizontalAlignment="Left" Background="White" Visibility="Hidden" TouchEnter="Btnshop_TouchEnter">
+                    <DockPanel>
+                        <Image Source="/factory.jpg" Width="15" Height="15" Stretch="Fill" Margin="5,0"/>
+                        <TextBlock Text="factory" Margin="5,0"/>
+                        <TextBlock Text="prijs:"/>
+                        <TextBlock x:Name="Txtklik5" Text="0" Margin="5,0" DockPanel.Dock="Right"></TextBlock>
+                        <TextBlock x:Name="TxtAankoop5" Margin="35,0"></TextBlock>
                     </DockPanel>
                 </Button>
             </DockPanel>
