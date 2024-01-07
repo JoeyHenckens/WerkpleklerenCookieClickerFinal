@@ -23,7 +23,20 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Cookie Clicker" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" FontSize="24px"/>
-        <Label x:Name="lblInkomen" Content="Passief Inkomen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="24px"/>
+        <Label x:Name="lblInkomen" Content="Passief Inkomen: " Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="24px" Foreground="White">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF903333" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+            <Label.OpacityMask>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF9C1B1B" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.OpacityMask>
+        </Label>
         <Label x:Name="LblCookies" Content="0 cookies" FontSize="36px" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" />
         <Image x:Name="ImgCookie" Source="/Cookie.png" Grid.Row="1" Grid.RowSpan="2" MouseDown="ImgCookie_MouseDown" MouseUp="ImgCookie_MouseUp" MouseEnter="ImgCookie_MouseEnter" MouseLeave="ImgCookie_MouseLeave"/>
 

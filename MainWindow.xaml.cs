@@ -76,7 +76,7 @@ namespace CookieClicker
 
         private string returnAantalCookies()
         {
-            return $"{Math.Round(totaal_score)} cookies";
+            return $"{afkortingenGetallen(Math.Round(totaal_score))} cookies";
         }
 
         private void Btnshop_Click(object sender, RoutedEventArgs e)
@@ -179,9 +179,40 @@ namespace CookieClicker
             passiefInkomen = 0;
             for (int i = 0; i < 5; i++)
             {
-                passiefInkomen += (passiefinkomen[i] * shop[i]);
+                if (totaal_score >= prijs[i])
+                {
+                    passiefInkomen += (passiefinkomen[i] * shop[i]);
+                }
             }
             lblInkomen.Content = $"Passief inkomen: {passiefInkomen.ToString()}";
+        }
+
+        private string afkortingenGetallen(double getal)
+        {
+            string[] afkortingen = new string[7] { "", "", "Miljoen", "Miljard", "Biljoen", "Biljard", "Triljoen" };
+            string tekstGetal = "";
+            int i = 0;
+            if (getal >= 1000000)
+            {
+                while (getal >= 1000 && i < afkortingen.Length - 1)
+                {
+                    getal *= 1000;
+                    getal /= 1000;
+                    getal = Math.Floor(getal);
+                    getal /= 1000;
+                    i++;
+                }
+                tekstGetal = $"{getal} {afkortingen[i]}";
+            }
+            else if (getal >= 1000 && getal <= 1000000)
+            {
+                tekstGetal = getal.ToString("### ###");
+            }
+            else
+            {
+                tekstGetal = $"{getal}";
+            }
+            return tekstGetal;
         }
 
     }
