@@ -22,7 +22,7 @@ namespace CookieClicker
     /// </summary>
     public partial class MainWindow : Window
     {
-        private double totaal_score = 500000000;
+        private double totaal_score = 250;
         private double som_optellen = 1;
         private double imgwidth;
         private double passiefInkomen = 0;
@@ -46,6 +46,8 @@ namespace CookieClicker
 
         private void goldencookie_tick(object sender, EventArgs e)
         {
+            // random aanmaken en op basis hiervan de image inspawnnen op de canvas erna voeg ik een method toe op erop te klikken
+
             Random cookieRandom = new Random();
             if (cookieRandom.Next(1, 101) <= 30)
             {
@@ -127,7 +129,8 @@ namespace CookieClicker
         {
             switch (((Button)sender).Name)
             {
-                case ("Btnshop1"):
+                case ("Btnshop1"): // via de naam van de sender voer ik de berkening uit voor de prijs gevolgt met het betalen van de upgrade erna
+                                    // voeg ik de images toe aan een method die naar een stackpanel gaat en dit generate
                     prijs[0] = investeringPrijs(prijs[0], shop[0]);
                     totaal_score -= prijs[0];
                     shop[0]++;
@@ -235,6 +238,8 @@ namespace CookieClicker
 
         private void updatePrijs()
         {
+             // alles updaten zodat het duidelijk is voor de user
+
             TxtAankoop1.Text = afkortingenGetallen(prijs[0]).ToString();
             TxtAankoop2.Text = afkortingenGetallen(prijs[1]).ToString();
             TxtAankoop3.Text = afkortingenGetallen(prijs[2]).ToString();
@@ -252,6 +257,8 @@ namespace CookieClicker
         }
 
         private void opbrengstPassief() {
+
+            // 7 verschillende upgrades dus for loop met pasief inkomen upgraden
             passiefInkomen = 0;
             for (int i = 0; i < 7; i++)
             {
@@ -265,6 +272,7 @@ namespace CookieClicker
 
         private string afkortingenGetallen(double getal)
         {
+            // via een array de getallen splitsen en op basis hiervan de juiste suffix geven
             string[] afkortingen = new string[7] { "", "", "Miljoen", "Miljard", "Biljoen", "Biljard", "Triljoen" };
             string tekstGetal = "";
             int i = 0;
@@ -308,6 +316,7 @@ namespace CookieClicker
 
         private void ImgAddChilds(string backgroundname, string imagename,StackPanel panel)
         {
+            // ik krijg de backgroundname de imagename en de panel binnen en generate de nieuwe wpf elementen en voeg ze toe als children
             ImageBrush imgBackground = new ImageBrush();
             imgBackground.ImageSource = new BitmapImage(new Uri($"pack://application:,,,/{backgroundname}"));
             imgBackground.Stretch = Stretch.Fill;
@@ -422,6 +431,7 @@ namespace CookieClicker
 
         private void BtnAchievements_Click(object sender, RoutedEventArgs e)
         {
+            // nieuwe window aanmaken in deze window heb ik een for loop voor de achievements en laat ik de gekregen achievements zien
             Window1 f = new Window1();
             f.ShowDialog();
         }
