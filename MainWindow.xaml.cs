@@ -71,5 +71,15 @@ namespace CookieClicker
             return $"{Math.Round(totaal_score)} cookies";
         }
 
+        private void Btnshop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btnshop_TouchEnter(object sender, TouchEventArgs e)
+        {
+            ((Button)sender).ToolTip = returnAantalCookies();
+        }
+
     }
 }
